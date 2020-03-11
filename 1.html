@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>WEB</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.js   "></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <script>
+
+function login(){
+    var password = '9fa3f3ffaa3eb9a24ac24de32b287b279f4d02b836cd391a25634cf297b9fc72';
+    var inputPassword = sha256(prompt('password?')+'0405');
+    if(password === inputPassword) {
+        alert('주인님 어서오세요~');
+        var utterance = new SpeechSynthesisUtterance('주인님 어서오세요');
+        window.speechSynthesis.speak(utterance);
+    } else {
+        alert('뉘슈?');
+        var utterance = new SpeechSynthesisUtterance('뉘슈?');
+        window.speechSynthesis.speak(utterance);
+        document.querySelector('body').className = 'hinge';
+    }
+}
+        
+    </script>
+</head>
+
+<body>
+    <input type="button" value="login" onclick="
+        login();
+    ">
+    <h1><a href="/index.html" id="a1">WEB</a></h1>
+    <!-- unordered list -->
+    <script>
+        var bodyTag = document.querySelector('body');
+    </script>
+    <input type="button" value="night" onclick="
+    bodyTag.style.backgroundColor = 'black';
+    bodyTag.style.color = 'white';
+">
+    <input type="button" value="day" onclick="
+    bodyTag.style.backgroundColor = 'white';
+    bodyTag.style.color = 'black';
+">
+
+    <input type="button" value="night" onclick="
+    // 만약에 this.value 값이 night라면 
+    var links = document.querySelectorAll('a');
+    if(this.value === 'night'){
+        
+        bodyTag.style.backgroundColor = 'black';
+        bodyTag.style.color = 'white';
+        this.value = 'day';
+
+        var i = 0;
+        while(i<links.length) {
+            links[i].style.color = 'white';
+            i = i + 1;
+        }
+    // 그렇지 않다면
+    } else {
+        bodyTag.style.backgroundColor = 'white';
+        bodyTag.style.color = 'black';
+        this.value = 'night';
+
+        var i = 0;
+        while(i<links.length) {
+            links[i].style.color = 'black';
+            i = i + 1;
+        }
+    }
+">
+
+    <ol>
+        <li><a href="1.html"  id="a2">html</a></li>
+        <li><a href="2.html" id="a3">css</a></li>
+        <li><a href="3.html" id="a4">js</a></li>
+    </ol>
+    <h2>html</h2>
+    HTML is ...
+
+    <input type="button" value="login" onclick="
+        login();
+    ">
+</body>
+
+</html>
